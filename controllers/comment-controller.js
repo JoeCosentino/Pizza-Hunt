@@ -31,7 +31,7 @@ const commentController = {
                     return res.status(404).json({ message: 'No comment with this id!' });
                 }
                 return Pizza.findOneAndUpdate(
-                    { _id: params.pizzaID },
+                    { _id: params.pizzaId },
                     { $pull: { comments: params.commentId } },
                     { new: true }
                 );
